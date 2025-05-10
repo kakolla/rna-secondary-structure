@@ -21,8 +21,9 @@ OPT(i, j) = max {
     OPT(i, j-1),
     max_t {1 + OPT(i,t-1) + OPT(t+1, j-1)} , i <= t < j-4 (hairpin structure)
 }
-
 */
+
+
 // return max number of pairings
 int fold(vector<int> sequence)
 {
@@ -40,7 +41,7 @@ int fold(vector<int> sequence)
     }
 
     int k = 5; // min distance to not cause a sharp turn
-    for (k = 5; k < n - 1; ++k)
+    for (k = 5; k < n; ++k)
     {
         for (int i = 0; i < n - k; ++i)
         {
@@ -54,6 +55,7 @@ int fold(vector<int> sequence)
                 {
                     int left_pairs = (t - 1 >= i) ? dp[i][t - 1] : 0; // check for bounds
                     int right_pairs = (t + 1 <= j - 1) ? dp[t + 1][j - 1] : 0;
+                    cout << i << "," << j << " left: " << left_pairs << " right: " << right_pairs << endl; 
                     pairs = max(pairs,
                                 1 + left_pairs + right_pairs);
                 }
