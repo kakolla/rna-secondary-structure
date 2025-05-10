@@ -19,5 +19,6 @@ Edit `sequence.txt` with valid sequence </br>
 Run `./main` for maximum base pairings </br>
 
 ### Sources
-https://bio.libretexts.org/Bookshelves/Computational_Biology/Book%3A_Computational_Biology_-_Genomes_Networks_and_Evolution_(Kellis_et_al.)/10%3A_RNA_Folding/10.04%3A_RNA_Structure
-https://math.mit.edu/classes/18.417/Slides/rna-prediction-nussinov.pdf
+https://bio.libretexts.org/Bookshelves/Computational_Biology/Book%3A_Computational_Biology_-_Genomes_Networks_and_Evolution_(Kellis_et_al.)/10%3A_RNA_Folding/10.04%3A_RNA_Structure <br />
+https://math.mit.edu/classes/18.417/Slides/rna-prediction-nussinov.pdf <br />
+https://www.youtube.com/watch?v=rE2Q_ewhMfY&ab_channel=LuayNakhleh <br />
