@@ -18,8 +18,8 @@ enum Nucleotides
 /*
 OPT(i, j) is max # of pairs of b_i, .. b_j
 OPT(i, j) = max {
-    OPT(i, j-1),
-    max_t {1 + OPT(i,t-1) + OPT(t+1, j-1)} , i <= t < j-4 (hairpin structure)
+    OPT(i, j-1), --> (i,j) isn't a valid pair
+    max_t {1 + OPT(i,t-1) + OPT(t+1, j-1)} --> i <= t < j-4 (hairpin structure where t is some break pt)
 }
 */
 
