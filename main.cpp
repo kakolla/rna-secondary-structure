@@ -11,7 +11,7 @@ enum Nucleotides
 };
 using namespace std;
 int main() {
-    vector<int> sequence = {G, C, A, U, G, C, U, A, G, C, A, U}; // Index 0–5
+    vector<int> sequence = {A, C, G, U, A, U, C, G, G, C, A, U};
 
     cout << fold(sequence) << endl;
 
