@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "functions.h"
 
 using namespace std;
 enum Nucleotides {
@@ -23,7 +24,17 @@ OPT(i, j) = max {
 */
 // return max number of pairings
 int fold(vector<int> sequence) {
-    
+    // int size = sequence.size();
+    // vector<vector<int>> dp(size, vector<int>(size, 0));
+
+    // // init OPT[i, j] = 0 if i >= j - 4
+    // for (vector<int> row : dp) {
+    //     for (int elem : row) {
+    //         cout << elem << endl;
+
+
+    //     }
+    // }
 
     
     return -1;
