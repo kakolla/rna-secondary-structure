@@ -39,7 +39,36 @@ int fold(vector<int> sequence)
         }
     }
 
-    return 0;
+    int k = 5; // min distance to not cause a sharp turn
+    for (k = 5; k < n - 1; ++k)
+    {
+        for (int i = 0; i < n - k; ++i)
+        {
+            int j = i + k;
+            int pairs = dp[i][j - 1]; // # of pairs if (i,j) isn't a pair
+            for (int t = i; t < j; ++t)
+            {
+                // consider possible candidates for the hairpin position
+                // valid - (bj, bt) must be either {Adenine, uracil} or {cytosine, guanine}
+                if (valid(sequence, t, j))
+                {
+                    int left_pairs = (t - 1 >= i) ? dp[i][t - 1] : 0; // check for bounds
+                    int right_pairs = (t + 1 <= j - 1) ? dp[t + 1][j - 1] : 0;
+                    pairs = max(pairs,
+                                1 + left_pairs + right_pairs);
+                }
+            }
+            dp[i][j] = pairs;
+        }
+    }
+    for (auto row : dp) {
+        for (int e : row) {
+            cout << e << " ";
+        }
+        cout << endl;
+    }
+
+    return dp[0][n - 1];
 }
 
 // return if valid base pair
@@ -48,7 +77,8 @@ bool valid(vector<int> sequence, int t, int j)
     if ((sequence[j] == A && sequence[t] == U) ||
         (sequence[t] == A && sequence[j] == U) ||
         (sequence[j] == C && sequence[t] == G) ||
-        (sequence[t] == C && sequence[j] == G)) {
+        (sequence[t] == C && sequence[j] == G))
+    {
         return true;
     }
     return false;
