@@ -24,7 +24,7 @@ OPT(i, j) = max {
 */
 
 
-// return max number of pairings
+// return max number of pairings -- Nussinov algorithm
 int fold(vector<int> sequence)
 {
     int n = sequence.size();
